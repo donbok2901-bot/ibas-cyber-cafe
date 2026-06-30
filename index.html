@@ -312,47 +312,45 @@
 
     <!-- Slide 1: Flex Printing -->
     <div class="slide">
-      <div class="slide-placeholder" style="background: linear-gradient(135deg, #0d3d50 0%, #1a6b8a 100%);">
-        <div class="slide-overlay" style="background:none;">
-          <div class="slide-tag">🖨️ Printing Service</div>
-          <div class="slide-icon-bg" style="background:rgba(255,255,255,0.12);">
-            <svg viewBox="0 0 24 24"><path d="M3 3h18v14H3z"/><path d="M8 21h8M12 17v4"/></svg>
-          </div>
-          <h2>Flex &amp; Banner Printing</h2>
-          <p>Shop boards, event banners, birthday banners &amp; more — printed fast at great prices. From ₹20/sq.ft.</p>
-        </div>
+      <img src="images/flex.jpg" alt="Flex and banner printing" class="slide-img" />
+      <div class="slide-overlay">
+        <div class="slide-tag">🖨️ Printing Service</div>
+        <h2>Flex &amp; Banner Printing</h2>
+        <p>Shop boards, event banners, birthday banners &amp; more — printed fast at great prices. From ₹20/sq.ft.</p>
       </div>
     </div>
 
     <!-- Slide 2: Photo Printing -->
     <div class="slide">
-      <div class="slide-placeholder" style="background: linear-gradient(135deg, #1a4a6b 0%, #2a7aaa 100%);">
-        <div class="slide-overlay" style="background:none;">
-          <div class="slide-tag">📸 Photo Service</div>
-          <div class="slide-icon-bg" style="background:rgba(255,255,255,0.12);">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
-          </div>
-          <h2>Photo Printing</h2>
-          <p>Passport size, stamp size, wallet size &amp; custom prints. Colour from ₹20 · Ready in minutes!</p>
-        </div>
+      <img src="images/photo_printing.jpg" alt="Photo printing" class="slide-img" />
+      <div class="slide-overlay">
+        <div class="slide-tag">📸 Photo Service</div>
+        <h2>Photo Printing</h2>
+        <p>Passport size, stamp size, wallet size &amp; custom prints. Colour from ₹20 · Ready in minutes!</p>
       </div>
     </div>
 
-    <!-- Slide 3: Banner Printing -->
+    <!-- Slide 3: Document Printing -->
     <div class="slide">
-      <div class="slide-placeholder" style="background: linear-gradient(135deg, #0d2f3b 0%, #1a6b5a 100%);">
-        <div class="slide-overlay" style="background:none;">
-          <div class="slide-tag">🎉 Events &amp; Occasions</div>
-          <div class="slide-icon-bg" style="background:rgba(255,255,255,0.12);">
-            <svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
-          </div>
-          <h2>Custom Banners &amp; Boards</h2>
-          <p>Birthday banners, church boards, school displays, election banners — any size, quick delivery!</p>
-        </div>
+      <img src="images/printing.jpg" alt="Document printing" class="slide-img" />
+      <div class="slide-overlay">
+        <div class="slide-tag">📄 Document Service</div>
+        <h2>Document Printing &amp; Photocopy</h2>
+        <p>B&amp;W from ₹2/page, colour from ₹10/page. Single &amp; double sided, scan to WhatsApp available.</p>
       </div>
     </div>
 
-    <!-- Slide 4: Online Services -->
+    <!-- Slide 4: T-shirt Printing -->
+    <div class="slide">
+      <img src="images/shirt.jpg" alt="T-shirt printing" class="slide-img" />
+      <div class="slide-overlay">
+        <div class="slide-tag">👕 Custom Printing</div>
+        <h2>T-Shirt Printing</h2>
+        <p>Custom printed t-shirts for events, teams, and special occasions — your design or ours!</p>
+      </div>
+    </div>
+
+    <!-- Slide 5: Online Services -->
     <div class="slide">
       <div class="slide-placeholder" style="background: linear-gradient(135deg, #3a1a6b 0%, #6a3aaa 100%);">
         <div class="slide-overlay" style="background:none;">
@@ -376,6 +374,7 @@
     <button class="slider-dot" onclick="slideTo(1)"></button>
     <button class="slider-dot" onclick="slideTo(2)"></button>
     <button class="slider-dot" onclick="slideTo(3)"></button>
+    <button class="slider-dot" onclick="slideTo(4)"></button>
   </div>
 </div>
 
@@ -1329,7 +1328,7 @@ document.addEventListener('keydown', function(e) {
 
 // ── SLIDER ───────────────────────────────────────────────────────────────────
 var slideIndex = 0;
-var totalSlides = 4;
+var totalSlides = 5;
 var sliderTimer;
 
 function slideTo(n) {
@@ -1357,38 +1356,6 @@ sliderTimer = setInterval(function() { slideMove(1); }, 4500);
 // Pause on hover
 document.getElementById('mainSlider').addEventListener('mouseenter', function() { clearInterval(sliderTimer); });
 document.getElementById('mainSlider').addEventListener('mouseleave', function() { resetSliderTimer(); });
-
-
-// ── SLIDER ────────────────────────────────────────────────────────────────────
-var currentSlide = 0;
-var totalSlides = 4;
-var sliderTimer;
-
-function updateSlider() {
-  document.getElementById('sliderTrack').style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
-  document.querySelectorAll('.slider-dot').forEach(function(d, i) {
-    d.classList.toggle('active', i === currentSlide);
-  });
-}
-
-function changeSlide(dir) {
-  currentSlide = (currentSlide + dir + totalSlides) % totalSlides;
-  updateSlider();
-  resetTimer();
-}
-
-function goToSlide(n) {
-  currentSlide = n;
-  updateSlider();
-  resetTimer();
-}
-
-function resetTimer() {
-  clearInterval(sliderTimer);
-  sliderTimer = setInterval(function() { changeSlide(1); }, 4500);
-}
-
-sliderTimer = setInterval(function() { changeSlide(1); }, 4500);
 
 // ── NAV ───────────────────────────────────────────────────────────────────────
 function toggleMenu() {
