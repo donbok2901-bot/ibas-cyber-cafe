@@ -316,7 +316,7 @@
     <div class="slide">
       <img src="images/flex.jpg" alt="Flex and banner printing" class="slide-img" />
       <div class="slide-overlay">
-        
+        <div class="slide-tag">🖨️ Printing Service</div>
         <h2>Flex &amp; Banner Printing</h2>
         <p>Shop boards, event banners, birthday banners &amp; more — printed fast at great prices. From ₹20/sq.ft.</p>
       </div>
@@ -326,7 +326,7 @@
     <div class="slide">
       <img src="images/photo_printing.jpg" alt="Photo printing" class="slide-img" />
       <div class="slide-overlay">
-        
+        <div class="slide-tag">📸 Photo Service</div>
         <h2>Photo Printing</h2>
         <p>Passport size, stamp size, wallet size &amp; custom prints. Colour from ₹20 · Ready in minutes!</p>
       </div>
@@ -336,7 +336,7 @@
     <div class="slide">
       <img src="images/printing.jpg" alt="Document printing" class="slide-img" />
       <div class="slide-overlay">
-        
+        <div class="slide-tag">📄 Document Service</div>
         <h2>Document Printing &amp; Photocopy</h2>
         <p>B&amp;W from ₹2/page, colour from ₹10/page. Single &amp; double sided, scan to WhatsApp available.</p>
       </div>
@@ -346,7 +346,7 @@
     <div class="slide">
       <img src="images/shirt.jpg" alt="T-shirt printing" class="slide-img" />
       <div class="slide-overlay">
-        
+        <div class="slide-tag">👕 Custom Printing</div>
         <h2>T-Shirt Printing</h2>
         <p>Custom printed t-shirts for events, teams, and special occasions — your design or ours!</p>
       </div>
@@ -858,15 +858,64 @@ const modals = {
     subtitle: 'Printed &amp; framed photos for every occasion',
     body: `
       <div class="modal-section">
-        <div class="modal-section-title">Price list (print + frame)</div>
-        <table class="price-table">
-          <tr><th>Frame size</th><th>Price</th></tr>
-          <tr><td>4×6 inch frame</td><td class="price">₹80</td></tr>
-          <tr><td>5×7 inch frame</td><td class="price">₹120</td></tr>
-          <tr><td>8×10 inch frame</td><td class="price">₹200</td></tr>
-          <tr><td>A4 frame (8.3×11.7 inch)</td><td class="price">₹250</td></tr>
-          <tr><td>A3 frame (11.7×16.5 inch)</td><td class="price">₹400</td></tr>
-        </table>
+        <div class="modal-section-title">Available Frame Sizes</div>
+        <div class="item-photo-grid">
+
+          <div class="item-photo-card">
+            <div class="item-photo"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1"/><rect x="7" y="7" width="10" height="10" rx="0.5"/></svg><div class="photo-label">📷 Photo coming soon</div></div>
+            <div class="item-photo-info">
+              <div class="iname">4×6 inch</div>
+              <div class="idesc">Small wallet-friendly frame — great for desk display or gifting</div>
+              <div class="iprice">₹80</div>
+            </div>
+          </div>
+
+          <div class="item-photo-card">
+            <div class="item-photo"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1"/><rect x="7" y="7" width="10" height="10" rx="0.5"/></svg><div class="photo-label">📷 Photo coming soon</div></div>
+            <div class="item-photo-info">
+              <div class="iname">5×7 inch</div>
+              <div class="idesc">Standard frame — popular for family photos and school pictures</div>
+              <div class="iprice">₹120</div>
+            </div>
+          </div>
+
+          <div class="item-photo-card">
+            <div class="item-photo"><img src="images/frame1.jpeg" alt="8x10 inch photo frame" style="width:100%;height:100%;object-fit:cover;" /></div>
+            <div class="item-photo-info">
+              <div class="iname">8×10 inch</div>
+              <div class="idesc">Medium frame — perfect for portraits and wedding photos on the wall</div>
+              <div class="iprice">₹200</div>
+            </div>
+          </div>
+
+          <div class="item-photo-card">
+            <div class="item-photo"><img src="images/frame2.jpeg" alt="A4 photo frame style 1" style="width:100%;height:100%;object-fit:cover;" /></div>
+            <div class="item-photo-info">
+              <div class="iname">A4 (8.3×11.7 inch)</div>
+              <div class="idesc">Large frame — ideal for certificates, awards, and home decoration</div>
+              <div class="iprice">₹250</div>
+            </div>
+          </div>
+
+          <div class="item-photo-card">
+            <div class="item-photo"><img src="images/frame3.jpeg" alt="A4 photo frame style 2" style="width:100%;height:100%;object-fit:cover;" /></div>
+            <div class="item-photo-info">
+              <div class="iname">A4 — Style 2</div>
+              <div class="idesc">Another A4 frame design — different border style, same great quality</div>
+              <div class="iprice">₹250</div>
+            </div>
+          </div>
+
+          <div class="item-photo-card">
+            <div class="item-photo"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1"/><rect x="7" y="7" width="10" height="10" rx="0.5"/></svg><div class="photo-label">📷 Photo coming soon</div></div>
+            <div class="item-photo-info">
+              <div class="iname">A3 (11.7×16.5 inch)</div>
+              <div class="idesc">XL frame — best for group photos, events, and office display</div>
+              <div class="iprice">₹400</div>
+            </div>
+          </div>
+
+        </div>
       </div>
       <div class="modal-section">
         <div class="modal-section-title">Popular for</div>
@@ -875,11 +924,12 @@ const modals = {
           <span class="badge badge-amber">Wedding photos</span>
           <span class="badge badge-amber">School photos</span>
           <span class="badge badge-amber">Gifts</span>
-          <span class="badge badge-amber">Office/home decor</span>
+          <span class="badge badge-amber">Office &amp; home decor</span>
+          <span class="badge badge-amber">Certificates &amp; awards</span>
         </div>
       </div>
       <div class="modal-section">
-        <div class="note-box"><strong>Tip:</strong> Bring your photo digitally (phone / USB). We can also scan and reprint old physical photos.</div>
+        <div class="note-box"><strong>Tip:</strong> Bring your photo on your phone, USB, or SD card. We can also scan and reprint old physical photos into a new frame!</div>
       </div>`
   },
 
